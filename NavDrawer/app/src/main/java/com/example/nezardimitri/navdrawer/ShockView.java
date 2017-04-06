@@ -11,14 +11,14 @@ import android.view.ViewGroup;
  * Created by nezardimitri on 2017-04-05.
  */
 
-public class FirstFragment extends Fragment {
+public class ShockView extends Fragment {
 
     View myView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.first_layout, container, false);
+        myView = inflater.inflate(R.layout.shock_layout, container, false);
         return myView;
 
     }

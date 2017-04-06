@@ -11,14 +11,14 @@ import android.view.ViewGroup;
  * Created by nezardimitri on 2017-04-05.
  */
 
-public class SecondFragment extends Fragment {
+public class NavView extends Fragment {
 
     View myView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.second_layout, container, false);
+        myView = inflater.inflate(R.layout.nav_layout, container, false);
         return myView;
 
     }

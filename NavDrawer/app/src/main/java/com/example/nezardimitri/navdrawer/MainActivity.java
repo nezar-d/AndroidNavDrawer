@@ -6,7 +6,6 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -15,6 +14,9 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    //android.app.FragmentManager fragmentManager = getFragmentManager();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +35,10 @@ public class MainActivity extends AppCompatActivity
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.setDrawerListener(toggle);
+//        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -55,7 +57,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+
+//        fragmentManager.beginTransaction().add(R.id.nav_first_layout, new PauseView(), "first").commit();
+//        fragmentManager.beginTransaction().add(R.id.nav_second_layout, new SecondFragment(), "second").commit();
+//        fragmentManager.beginTransaction().add(R.id.nav_third_layout, new ThirdFragment(), "third").commit();
+
         return true;
     }
 
@@ -81,31 +87,45 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         android.app.FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_first_layout) {
+        if (id == R.id.nav_pause) {
+
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
-                                , new FirstFragment())
+                                , new PauseView())
                     .commit();
 
-        } else if (id == R.id.nav_second_layout) {
+        } else if (id == R.id.nav_shock) {
+
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
-                            , new SecondFragment())
+                            , new ShockView())
                     .commit();
 
-        } else if (id == R.id.nav_third_layout) {
+        } else if (id == R.id.nav_crew) {
+
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
-                            , new ThirdFragment())
+                            , new CrewView())
                     .commit();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_navigation) {
 
-        } else if (id == R.id.nav_send) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame
+                            , new NavView())
+                    .commit();
+
+        } else if (id == R.id.nav_subsystem) {
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame
+                            , new SubsystemView())
+                    .commit();
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

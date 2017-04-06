@@ -3,30 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_first_layout"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="First Layout" />
+            android:id="@+id/nav_pause"
+            android:icon="@drawable/icon_pause"
+            android:title="Pause Menu" />
         <item
-            android:id="@+id/nav_second_layout"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Second Layout" />
+            android:id="@+id/nav_subsystem"
+            android:icon="@drawable/icon_subsystem"
+            android:title="Subsystems" />
         <item
-            android:id="@+id/nav_third_layout"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="ThirdLayout" />
+            android:id="@+id/nav_shock"
+            android:icon="@drawable/icon_shock"
+            android:title="Shock" />
+        <item
+            android:id="@+id/nav_navigation"
+            android:icon="@drawable/icon_navi"
+            android:title="Navigate" />
+        <item
+            android:id="@+id/nav_crew"
+            android:icon="@drawable/icon_crew"
+            android:title="Crew" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>
